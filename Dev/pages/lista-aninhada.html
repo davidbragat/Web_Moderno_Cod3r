@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Lista Aninhada</title>
+    </head>
+    <body>
+        <h1>Projeto</h1>
+
+        <ul class="tree">
+            <li class="folder">
+                backend
+                <ul>
+                    <li class="folder"> app
+                        <ul>
+                            <li>produto.js</li>
+                            <li>usuario.js</li>
+                            <li>venda.js</li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul>
+                    <li class="folder"> config
+                        <ul>
+                            <li>banco.js</li>
+                            <li>rotas.js</li>
+                            <li>servidor.js</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li class="folder">frontend
+                <ul>
+                    <li class="folder">public
+                        <ul>
+                            <li>app.css</li>
+                            <li>app.js</li>
+                            <li>index.html</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css" />
+    </body>
+
+    <script>
+        const folder = document.querySelectorAll('.folder')
+        folder.addEventListener('click', closeFolder())
+
+
+        const closeFolder = function(){
+            folder.IN
+        }
+    </script>
+</html>
