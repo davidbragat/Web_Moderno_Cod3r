@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script src="question-select.js"></script>
+        <link rel="stylesheet" href="style.css" />
+        <title>Question Select</title>
+    </head>
+    <body>
+        <div class="input">
+            Text
+            <textarea name="Question" id="text" class="textInput" cols="130" rows="20" wrap="soft">
+Insira aqui o seu texto</textarea
+            >
+            <button type="submit" class="regex" onclick="regexIt()">Regex it</button>
+            <button type="submit" class="regex" onclick="regexQC()">Regex QC</button>
+            <button type="submit" class="regex" id="clear" onclick="clean()">Clear</button>
+        </div>
+        <div class="input">
+            Question<textarea name="Question" id="q" class="textInput" cols="130" rows="10" wrap="soft"></textarea>
+            a)<textarea name="Question" id="a" class="textInput" cols="130" rows="10" wrap="soft"></textarea>
+            b)<textarea name="Question" id="b" class="textInput" cols="130" rows="10" wrap="soft"></textarea>
+            c)<textarea name="Question" id="c" class="textInput" cols="130" rows="10" wrap="soft"></textarea>
+            d)<textarea name="Question" id="d" class="textInput" cols="130" rows="10" wrap="soft"></textarea>
+            e)<textarea name="Question" id="e" class="textInput" cols="130" rows="10" wrap="soft"></textarea>
+        </div>
+    </body>
+</html>

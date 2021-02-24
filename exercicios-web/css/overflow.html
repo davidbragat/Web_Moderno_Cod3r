@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Overflow</title>
-    <style>
-        div {
-            font-size: 40px;
-            height: 100px;
-            width: 260px;
-            border: solid 3px;
-            /* overflow: hidden; */
-            /* overflow: scroll; */
-            overflow-x: scroll;
-            overflow-y: hidden;
-        }
-    </style>
-</head>
-<body>
-    <div>
-        TudoFuncionaMuitoBemEmCSS!!!
-        Texto muito grande para caber nessa div.
-        Já pensou qual será o comportamento padrão?
-    </div>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <title>Overflow</title>
+        <style>
+            body {
+                font-size: 50pt;
+                font-family: arial;
+            }
+            /* div {
+                font-size: 40px;
+                height: 100px;
+                width: 260px;
+                border: solid 3px;
+                overflow: hidden;
+                /* overflow: scroll; */
+            /* overflow-x: scroll;
+                overflow-y: hidden;
+            }
+            div:hover{
+                overflow:visible;
+            } */
+            div {
+                font-size: 15pt;
+            }
+            h1 {
+                font-size: 4rem;
+            }
+            .fonte {
+                font-size: 2rem;
+            }
+            p {
+                font-size: 1.5rem;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1>TudoFuncionaMuitoBemEmCSS!!!</h1>
+            <div class="fonte">
+                Texto muito grande para caber nessa div.
+                <p>Já pensou qual será o comportamento padrão?</p>
+            </div>
+        </div>
+    </body>
 </html>

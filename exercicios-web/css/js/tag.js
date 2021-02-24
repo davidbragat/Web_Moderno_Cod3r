@@ -13,19 +13,28 @@ const colors = {
     body: '#25b6da',
     padrao: '#616161',
     get(tag) {
-        return this[tag] ? this[tag] : this.padrao
-    }
-}
+        return this[tag] ? this[tag] : this.padrao;
+    },
+};
 
 document.querySelectorAll('.tag').forEach(elemento => {
-    const tagName = elemento.tagName.toLowerCase()
+    const tagName = elemento.tagName.toLowerCase();
 
-    elemento.style.borderColor = colors.get(tagName)
+    elemento.style.borderColor = colors.get(tagName);
 
     if (!elemento.classList.contains('nolabel')) {
-        const label = document.createElement('label')
-        label.style.backgroundColor = colors.get(tagName)
-        label.innerHTML = tagName
-        elemento.insertBefore(label, elemento.childNodes[0])
+        const label = document.createElement('label');
+        label.style.backgroundColor = colors.get(tagName);
+        label.innerHTML = tagName;
+        elemento.insertBefore(label, elemento.childNodes[0]);
     }
-})
+});
+
+console.log(typeof colors.get);
+console.log(document.getElementsByClassName('tag')[3].tagName.toLowerCase())
+
+const texto='OrçamentoPublico PlanoPlurianual ReceitaPublica'
+// const regexTag = /([A-Z])([a-zÀ-ü])+([A-Z])([a-za-zÀ-ü])+/g;
+const regexTag = /([a-zÀ-ü])([A-Z])/g;
+console.log(texto.match(regexTag))
+console.log(texto.replace(regexTag,'$1 $2'))

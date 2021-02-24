@@ -10,19 +10,20 @@
         <h1>Projeto</h1>
 
         <ul class="tree">
-            <li class="folder">
-                backend
+            <li>
+                <span folder>backend</span>
                 <ul>
-                    <li class="folder"> app
+                    <li>
+                        <span folder>app</span>
                         <ul>
                             <li>produto.js</li>
                             <li>usuario.js</li>
                             <li>venda.js</li>
                         </ul>
                     </li>
-                </ul>
-                <ul>
-                    <li class="folder"> config
+
+                    <li>
+                        <span folder>config</span>
                         <ul>
                             <li>banco.js</li>
                             <li>rotas.js</li>
@@ -31,9 +32,11 @@
                     </li>
                 </ul>
             </li>
-            <li class="folder">frontend
+            <li>
+                <span folder>frontend</span>
                 <ul>
-                    <li class="folder">public
+                    <li>
+                        <span folder>public</span>
                         <ul>
                             <li>app.css</li>
                             <li>app.js</li>
@@ -48,12 +51,12 @@
     </body>
 
     <script>
-        const folder = document.querySelectorAll('.folder')
-        folder.addEventListener('click', closeFolder())
-
-
-        const closeFolder = function(){
-            folder.IN
-        }
+        document.querySelectorAll('[folder]').forEach(folder => {
+            folder.onclick = function (e) {
+                const ul = folder.nextElementSibling;
+                const ulDisplay = ul.style.display;
+                ul.style.display = ulDisplay === 'none' ? 'block' : 'none';
+            };
+        });
     </script>
 </html>

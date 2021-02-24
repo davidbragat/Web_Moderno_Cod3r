@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <table>
+            <caption></caption>
+            <thead>
+                <tr>
+                    <th>Produto</th>
+                    <th>Preço</th>
+                    <th>Quantidade</th>
+                    <th>Resultado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Xiaomi</td>
+                    <td>R$3.289,05</td>
+                    <td>5</td>
+                    <td>R$16.445,00</td>
+                </tr>
+                <tr>
+                    <td>Glock 19</td>
+                    <td>R$1.289,05</td>
+                    <td>5</td>
+                    <td>R$16.445,00</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total</td>
+                    <td>R$37.000,00</td>
+                </tr>
+            </tfoot>
+        </table>
+    </body>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+
+        th, td{
+            padding:10px;
+        }
+
+        thead{
+            border-bottom: solid 3px #444;
+        }
+
+        tbody tr:hover{
+            background-color:#2b2828;
+            color: #fff
+        }
+        tfoot{
+            background-color:#dedede;
+            font-weight: bold;
+        }
+    </style>
+</html>

@@ -1,0 +1,35 @@
+*{
+    box-sizing: border-box;
+}
+.textInput {
+    background-color: rgba(153, 155, 155, 0.253);
+    display: flex;
+}
+
+.input{
+    font-weight: bold;
+    font-size: 16pt;
+    font-family: Calibri, Arial, Helvetica, sans-serif;
+}
+
+.regex {
+    padding: 10px;
+    margin: 15px;
+    width: 100px;
+    background-color: rgba(127, 255, 212, 0.705);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    border-radius: 10px;
+}
+
+.regex:hover{
+    background-color: rgba(5, 66, 10, 0.877);
+    color:#fff
+}
+
+#clear{
+    background-color: rgb(218, 196, 71);
+}
+
+#clear:hover{
+    background-color: rgb(134, 9, 15);
+}
