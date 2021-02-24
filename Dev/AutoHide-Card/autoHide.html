@@ -16,43 +16,64 @@
             li {
                 border: solid 1px greenyellow;
             }
-            .answerList {
-                font-size: 22px;
+            li.answerList {
                 list-style: none;
-                padding: 15px 5px;
-                content-visibility: hidden;
-                /* display: none; */
+                padding: 10px 5px;
+                color: #fff0;
+                min-width: 50%;
+                display: inline-block;
             }
-            li:hover{
-                content-visibility: visible;
+
+            #warn {
+                display: none;
+                color: red;
+                font-weight: 900;
+                font-size: 30px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            li:hover {
+                color: rgb(5, 5, 5);
+                border: solid 1px #fff4;
             }
         </style>
     </head>
     <body>
-        <div class="card">teste</div>
+        <div class="card">Cinco são os princípios expressos na Constituição, vejamos:</div>
         <div class="card">
             <ul id="answer">
+                Legalidade; Impessoalidade; Moralidade; Publicidade; Eficiência;
             </ul>
         </div>
 
         <script>
-            // const regexAnswer =
-            const answerSplit = document.querySelector('#answer').innerHTML.split(/$/gm);
-            const answerList = document.querySelector('#answer');
-            console.log(answerSplit);
+            const regexList = document.querySelector('#answer').innerHTML.match(/;/gm);
 
-            answerSplit.forEach((e, i) => {
-                answerSplit[i] = `<li class="answerList">${e.replace(/^\s+/g, '')}</li>`;
-                console.log(answerSplit[i]);
-            });
-            let answer = '';
-            for (let i = 0; i < answerSplit.length; i++) {
-                if (answerSplit[i] !== '<li class="answerList"></li>') {
-                    answer = answer + answerSplit[i];
+            if (regexList) {
+                const answerSplit = document.querySelector('#answer').innerHTML.split(/;/gm);
+                const answerList = document.querySelector('#answer');
+                console.log(answerSplit);
+
+                answerSplit.forEach((e, i) => {
+                    answerSplit[i] = `<span>${i + 1}.</span> <li class="answerList" onclick="this.style.color = '#fff'>${e.replace(
+                        /^\s+/g,
+                        ''
+                    )}</li><br>`;
+                });
+                let answer = '';
+                for (let i = 0; i < answerSplit.length - 1; i++) {
+                    if (answerSplit[i] != '<span>${i+1}.</span> <li class="answerList"></li><br>') {
+                        answer = answer + answerSplit[i];
+                    }
                 }
+                answerList.innerHTML = answer;
+            } else {
+                document.getElementById('warn').style.display = 'block';
+                document.getElementById('answer').style.display = 'none';
+                document.getElementById('question').style.display = 'none';
             }
 
-            answerList.innerHTML = answer;
         </script>
     </body>
 </html>
