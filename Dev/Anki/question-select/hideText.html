@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Anki Hide Text</title>
+        <style>
+            #warn {
+                display: none;
+                padding: 25px 0;
+                color: red;
+                font-weight: 900;
+                font-size: 30px;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            span {
+                font-size: 20px;
+                color: #0000;
+                font-weight: bold;
+                text-decoration: underline rgba(0, 0, 0, 0.733) dotted;
+            }
+
+            span:hover {
+                color: #72ff3b;            }
+        </style>
+    </head>
+    <body>
+        <div class="sample2">
+            <header id="menu" class="section">
+                <article>
+                    <p class="subdeck">{{Deck}}</p>
+                    <p class="deck"></p>
+                    <p class="tags">{{Tags}}</p>
+                </article>
+            </header>
+
+            {{#Front}}
+            <div class="card" id="answer">
+                Os atos materiais são aqueles advindos do Estado, de qualquer dos Poderes, em decorrência do {:exercício
+                da função administrativa:}. Os atos {:formais ou orgânicos:} são os editados exclusivamente pelo Poder
+                Executivo.
+            </div>
+            <p id="warn">ERRO!<br />Envolva o texto a ser ocultado com {:TEXTO:}</p>
+
+            {{/Front}}
+
+            <script>
+                /*AutoHide-------------------------*/
+                const regexList = document.querySelector('#answer').innerHTML.match(/\{:.*:\}/gm);
+
+                if (regexList) {
+                    const answer = document
+                        .getElementById('answer')
+                        .innerHTML.replace(/&nbsp;/gm, ' ')
+                        .replace(/\{:/gm, `<span class="hide" onclick=this.style.color="#3bf8ff">`)
+                        .replace(/:\}/gm, `</span>`);
+                    console.log(answer);
+                    document.getElementById('answer').innerHTML = answer;
+                } else {
+                    document.getElementById('warn').style.display = 'block';
+                    document.getElementById('answer').style.display = 'none';
+                }
+
+                /*-----------------------------------*/
+
+                /*-----------------------------------*/
+
+                /*Regex Tags*/
+                const tag = [...document.getElementsByClassName('tags')];
+                const tagNormal = tag[0].innerHTML.replace(/&gt;/g, ' :: ').replace(/_/g, ' ');
+                document.querySelector('.deck').innerHTML = tagNormal;
+
+                /* Random Color*/
+                const changeColors = function () {
+                    const colors = [
+                        '#293D3D',
+                        '#6A8A8A',
+                        '#4E8A8A',
+                        '#8A5C41',
+                        '#3D3029',
+                        '#205757',
+                        '#3D3526',
+                        '#3D2D2C',
+                        '#8A6C6A',
+                        '#3D3526',
+                        '#8A744E',
+                        '#2E3B4A',
+                        '#344C54',
+                        '#34544B',
+                        '#2E4A3A',
+                        '#3D1236',
+                        '#4A1512',
+                    ];
+                    const tagColors = [
+                        '#B0CFD6',
+                        '#73CADD',
+                        '#80D6CB',
+                        '#D6C06B',
+                        '#B2D683',
+                        '#D6B6A7',
+                        '#E0FFFC',
+                        '#D8FCBE',
+                        '#D4A7D6',
+                        '#868AD9',
+                        '#FFEA96',
+                        '#9DCCDA',
+                        '#FFCB96',
+                        '#9CD9A3',
+                        '#8C495D',
+                    ];
+
+                    document.getElementById('menu').style.background =
+                        colors[Math.floor(Math.random() * (colors.length - 1))];
+                    document.getElementsByClassName('subdeck')[0].style.color =
+                        tagColors[Math.floor(Math.random() * (tagColors.length - 1))];
+                    document.getElementsByClassName('deck')[0].style.color =
+                        tagColors[Math.floor(Math.random() * (tagColors.length - 1))];
+                };
+
+                changeColors();
+                /*----------------------------*/
+
+                function showextra() {
+                    document.getElementById('extrafield').style.display = 'flex';
+                    document.getElementById('extra_toggle_off_button').style.display = 'block';
+                    document.getElementById('extra_toggle_on_button').style.display = 'none';
+                }
+
+                function hideextra() {
+                    document.getElementById('extrafield').style.display = 'none';
+                    document.getElementById('extra_toggle_off_button').style.display = 'none';
+                    document.getElementById('extra_toggle_on_button').style.display = 'block';
+                }
+
+                function randomColor() {
+                    document.getElementByClassName('menu').style.backgroundColor = 'red';
+                }
+            </script>
+        </div>
+    </body>
+</html>
